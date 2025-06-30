@@ -1,7 +1,3 @@
-Absolutely! Here's your cleaned-up and nicely formatted version with proper line breaks, spacing, and consistent formatting for readability on GitHub:
-
----
-
 ### 🥈 Second Place Solution for the DSN Free AI Classes in Every City 2025 Hackathon
 
 This project was developed for a challenge hosted by **Zindi** using **Google Colab**. The objective was to build a regression-based solution to identify which products are most likely to be returned at **Impact Stores**, a Nigerian retail chain with over 1,500 products. The insights are intended to guide strategic expansion decisions.
