@@ -1,56 +1,86 @@
-### 🥈 Second place solution for the DSN Free AI Classes in Every City 2025 Hackathon
+Absolutely! Here's your cleaned-up and nicely formatted version with proper line breaks, spacing, and consistent formatting for readability on GitHub:
 
-This project was developed for a challenge hosted by Zindi using Google Colab. The goal was to build a regression-based solution aimed at providing insights into which products yield higher returns at **Impact Stores**, a Nigerian retail chain with over 1,500 products. The insights are intended to guide strategic expansion decisions.
+---
 
-### Core Objective: 🔍
-The core objective was to predict **item store returns** using machine learning regression models. After extensive model experimentation and cross-validation on various algorithms—including Ridge Regression, Lasso Regression, Support Vector Regressor (SVR), Decision Trees, and Linear Regression—I found **Lasso Regression** with an alpha value of **60.5** to yield the best performance based on **Root Mean Squared Error (RMSE)**.
+### 🥈 Second Place Solution for the DSN Free AI Classes in Every City 2025 Hackathon
+
+This project was developed for a challenge hosted by **Zindi** using **Google Colab**. The objective was to build a regression-based solution to identify which products are most likely to be returned at **Impact Stores**, a Nigerian retail chain with over 1,500 products. The insights are intended to guide strategic expansion decisions.
+
+---
+
+### 🎯 Core Objective
+
+Predict **item return volumes** using regression models.
+
+After experimenting with several algorithms—**Ridge Regression**, **Lasso Regression**, **Support Vector Regressor (SVR)**, **Decision Trees**, and **Linear Regression**—I found **Lasso Regression** with an `alpha` value of **60.5** delivered the best performance, based on **Root Mean Squared Error (RMSE)**.
+
+---
 
 ### 🔄 ETL Pipeline
-📥 **Extract**
-- Loaded raw train.csv and test.csv files containing customer, product, and order features.
 
-🔧 **Transform**
-- Applied mathematical transformations: log, reciprocal, sqrt, cube_root (to reduce skew).
+#### 📥 Extract
 
-- Encoded categorical features using One-Hot Encoding.
+* Loaded raw `train.csv` and `test.csv` files containing customer, product, and order data.
 
-- Generated polynomial features (degree = 2) to capture non-linear relationships.
+#### 🔧 Transform
 
-- Normalized all features using StandardScaler.
+* Applied mathematical transformations to reduce skew:
 
-📤 **Load**
-- Transformed data was fed into a Lasso Regression model for training and prediction.
+  * `log`, `reciprocal`, `sqrt`, `cube_root`
+* Encoded categorical features using **One-Hot Encoding**.
+* Generated **Polynomial Features** (degree = 2) to capture non-linear interactions.
+* Normalized the final feature set using **StandardScaler**.
 
-#### Key Contributions: 📝
+#### 📤 Load
 
-* **Feature Engineering**:
-  Exploratory Data Analysis (EDA) revealed that **Item Price** played a critical role in predicting returns. To enrich the feature space, I created transformed versions of the price feature using **logarithmic, square root, reciprocal**, and **cube root** functions. I also utilised Polynomial Features to capture non-linearity and the Standard Scalar function to normalise input features. These transformations contributed to improved model accuracy.
+* Transformed data was fed into a **Lasso Regression** model for training and prediction.
 
-* **Categorical Encoding**:
-  I applied **one-hot encoding** to categorical variables(Item_Type, Store_Type, Store_Location_Type, Store_Start_Year), which further boosted performance by allowing the model to interpret non-numeric data effectively.
+---
 
-* **Model Evaluation**:
-  Performance was assessed using **RMSE** on both the training and test sets to ensure the model generalizes well. Lasso Regression consistently outperformed other models in cross-validation, making it the final choice.
+### 📝 Key Contributions
 
-### Architecture Diagram 🗺
-<pre lang="markdown"> ``` +------------------+       +----------------------------------------+       +-----------------------------+       +------------------------+
-      |    Raw Data      |  -->  | Feature Transformation                 |  -->  | One-Hot Encoding            |  -->  | Polynomial Features     |
-      | (train/test CSV) |       | (log, reciprocal, sqrt, cube_root)     |       | (Categorical Variables)     |       | (degree = 2)            |
-      +------------------+       +----------------------------------------+       +-----------------------------+       +------------------------+
-                                                                                                                                    |
-                                                                                                                                    v
-                                                                                                                         +------------------------+
-                                                                                                                         | Standard Scaling       |
-                                                                                                                         | (Normalization)        |
-                                                                                                                         +------------------------+
-                                                                                                                                    |
-                                                                                                                                    v
-                                                                                                                         +------------------------+
-                                                                                                                         |  Lasso Regression      |
-                                                                                                                         |  (Training & Prediction)|
-                                                                                                                         +------------------------+
-                ``` </pre>
-                        
+#### 🔹 Feature Engineering
 
+* EDA revealed **Item Price** as a key driver of return volume.
+* Created transformed variants of price using:
 
+  * `log`, `sqrt`, `reciprocal`, `cube_root`
+* Applied **Polynomial Features** and **StandardScaler** for non-linearity and normalization, improving accuracy.
+
+#### 🔹 Categorical Encoding
+
+* Used **One-Hot Encoding** on:
+
+  * `Item_Type`, `Store_Type`, `Store_Location_Type`, `Store_Start_Year`
+* Enabled the model to interpret categorical variables numerically and effectively.
+
+#### 🔹 Model Evaluation
+
+* Evaluated using **RMSE** on training and test sets.
+* **Lasso Regression** consistently outperformed other models in cross-validation.
+
+---
+
+### 🗺 Architecture Diagram
+
+```
++------------------+       +------------------------------------------+       +-----------------------------+       +------------------------+
+|    Raw Data      |  -->  | Feature Transformation                   |  -->  | One-Hot Encoding            |  -->  | Polynomial Features     |
+| (train/test CSV) |       | (log, reciprocal, sqrt, cube_root)       |       | (categorical variables)     |       | (degree = 2)            |
++------------------+       +------------------------------------------+       +-----------------------------+       +------------------------+
+                                                                                                                                |
+                                                                                                                                v
+                                                                                                     +------------------------+
+                                                                                                     |  Standard Scaling      |
+                                                                                                     |  (Normalization)       |
+                                                                                                     +------------------------+
+                                                                                                                                |
+                                                                                                                                v
+                                                                                                     +------------------------+
+                                                                                                     |   Lasso Regression     |
+                                                                                                     | (Training & Prediction)|
+                                                                                                     +------------------------+
+```
+
+---
 
