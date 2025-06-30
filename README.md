@@ -18,21 +18,21 @@ The core objective was to predict **item store returns** using machine learning 
 
 ### Architecture Diagram
 <pre lang="markdown"> ``` +------------------+       +----------------------------------------+       +-----------------------------+       +------------------------+
-                          |    Raw Data      |  -->  | Feature Transformation                 |  -->  | One-Hot Encoding            |  -->  | Polynomial Features     |
-                          | (train/test CSV) |       | (log, reciprocal, sqrt, cube_root)     |       | (Categorical Variables)     |       | (degree = 2)            |
-                          +------------------+       +----------------------------------------+       +-----------------------------+       +------------------------+
-                                                                                                                                                        |
-                                                                                                                                                        v
-                                                                                                                                             +------------------------+
-                                                                                                                                             | Standard Scaling       |
-                                                                                                                                             | (Normalization)        |
-                                                                                                                                             +------------------------+
-                                                                                                                                                        |
-                                                                                                                                                        v
-                                                                                                                                             +------------------------+
-                                                                                                                                             |  Lasso Regression      |
-                                                                                                                                             |  (Training & Prediction)|
-                                                                                                                                             +------------------------+
+                |    Raw Data      |  -->  | Feature Transformation                 |  -->  | One-Hot Encoding            |  -->  | Polynomial Features     |
+                | (train/test CSV) |       | (log, reciprocal, sqrt, cube_root)     |       | (Categorical Variables)     |       | (degree = 2)            |
+                +------------------+       +----------------------------------------+       +-----------------------------+       +------------------------+
+                                                                                                                                              |
+                                                                                                                                              v
+                                                                                                                                   +------------------------+
+                                                                                                                                   | Standard Scaling       |
+                                                                                                                                   | (Normalization)        |
+                                                                                                                                   +------------------------+
+                                                                                                                                              |
+                                                                                                                                              v
+                                                                                                                                   +------------------------+
+                                                                                                                                   |  Lasso Regression      |
+                                                                                                                                   |  (Training & Prediction)|
+                                                                                                                                   +------------------------+
                           ``` </pre>
                           
 
