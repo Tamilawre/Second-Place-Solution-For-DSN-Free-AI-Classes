@@ -1,4 +1,4 @@
-### Project Summary – *main\_submission.ipynb*
+### 🥈 Second place solution for the DSN Free AI Classes in Every City 2025 Hackathon*
 
 This notebook was developed on Google Colab to build a regression-based solution aimed at providing insights into which products yield higher returns at **Impact Stores**, a Nigerian retail chain with over 1,500 products. The insights are intended to guide strategic expansion decisions.
 
