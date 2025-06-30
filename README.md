@@ -1,9 +1,25 @@
 ### 🥈 Second place solution for the DSN Free AI Classes in Every City 2025 Hackathon
 
-This notebook was developed on Google Colab to build a regression-based solution aimed at providing insights into which products yield higher returns at **Impact Stores**, a Nigerian retail chain with over 1,500 products. The insights are intended to guide strategic expansion decisions.
+This project was developed for a challenge hosted by Zindi using Google Colab. The goal was to build a regression-based solution aimed at providing insights into which products yield higher returns at **Impact Stores**, a Nigerian retail chain with over 1,500 products. The insights are intended to guide strategic expansion decisions.
 
 ### Core Objective: 🔍
 The core objective was to predict **item store returns** using machine learning regression models. After extensive model experimentation and cross-validation on various algorithms—including Ridge Regression, Lasso Regression, Support Vector Regressor (SVR), Decision Trees, and Linear Regression—I found **Lasso Regression** with an alpha value of **60.5** to yield the best performance based on **Root Mean Squared Error (RMSE)**.
+
+### 🔄 ETL Pipeline
+📥 **Extract**
+- Loaded raw train.csv and test.csv files containing customer, product, and order features.
+
+🔧 **Transform**
+- Applied mathematical transformations: log, reciprocal, sqrt, cube_root (to reduce skew).
+
+- Encoded categorical features using One-Hot Encoding.
+
+- Generated polynomial features (degree = 2) to capture non-linear relationships.
+
+- Normalized all features using StandardScaler.
+
+📤 **Load**
+- Transformed data was fed into a Lasso Regression model for training and prediction.
 
 #### Key Contributions: 📝
 
