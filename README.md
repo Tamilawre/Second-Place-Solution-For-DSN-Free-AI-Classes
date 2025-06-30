@@ -33,6 +33,29 @@ After experimenting with several algorithms—**Ridge Regression**, **Lasso Regr
 
 ---
 
+### 🗺 Architecture Diagram
+
+```
++------------------+       +------------------------------------------+       +-----------------------------+       +------------------------+
+|    Raw Data      |  -->  | Feature Transformation                   |  -->  | One-Hot Encoding            |  -->  | Polynomial Features     |
+| (train/test CSV) |       | (log, reciprocal, sqrt, cube_root)       |       | (categorical variables)     |       | (degree = 2)            |
++------------------+       +------------------------------------------+       +-----------------------------+       +------------------------+
+                                                                                                                                |
+                                                                                                                                v
+                                                                                                     +------------------------+
+                                                                                                     |  Standard Scaling      |
+                                                                                                     |  (Normalization)       |
+                                                                                                     +------------------------+
+                                                                                                                                |
+                                                                                                                                v
+                                                                                                     +------------------------+
+                                                                                                     |   Lasso Regression     |
+                                                                                                     | (Training & Prediction)|
+                                                                                                     +------------------------+
+```
+
+---
+
 ### 📝 Key Contributions
 
 #### 🔹 Feature Engineering
@@ -54,29 +77,6 @@ After experimenting with several algorithms—**Ridge Regression**, **Lasso Regr
 
 * Evaluated using **RMSE** on training and test sets.
 * **Lasso Regression** consistently outperformed other models in cross-validation.
-
----
-
-### 🗺 Architecture Diagram
-
-```
-+------------------+       +------------------------------------------+       +-----------------------------+       +------------------------+
-|    Raw Data      |  -->  | Feature Transformation                   |  -->  | One-Hot Encoding            |  -->  | Polynomial Features     |
-| (train/test CSV) |       | (log, reciprocal, sqrt, cube_root)       |       | (categorical variables)     |       | (degree = 2)            |
-+------------------+       +------------------------------------------+       +-----------------------------+       +------------------------+
-                                                                                                                                |
-                                                                                                                                v
-                                                                                                     +------------------------+
-                                                                                                     |  Standard Scaling      |
-                                                                                                     |  (Normalization)       |
-                                                                                                     +------------------------+
-                                                                                                                                |
-                                                                                                                                v
-                                                                                                     +------------------------+
-                                                                                                     |   Lasso Regression     |
-                                                                                                     | (Training & Prediction)|
-                                                                                                     +------------------------+
-```
 
 ---
 
