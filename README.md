@@ -17,7 +17,7 @@ The core objective was to predict **item store returns** using machine learning 
   Performance was assessed using **RMSE** on both the training and test sets to ensure the model generalizes well. Lasso Regression consistently outperformed other models in cross-validation, making it the final choice.
 
 ### Architecture Diagram
-+------------------+       +----------------------------------------+       +-----------------------------+       +------------------------+
+'''+------------------+       +----------------------------------------+       +-----------------------------+       +------------------------+
 |    Raw Data      |  -->  | Feature Transformation                 |  -->  | One-Hot Encoding            |  -->  | Polynomial Features     |
 | (train/test CSV) |       | (log, reciprocal, sqrt, cube_root)     |       | (Categorical Variables)     |       | (degree = 2)            |
 +------------------+       +----------------------------------------+       +-----------------------------+       +------------------------+
@@ -32,7 +32,7 @@ The core objective was to predict **item store returns** using machine learning 
                                                                                                                    +------------------------+
                                                                                                                    |  Lasso Regression      |
                                                                                                                    | (Training & Prediction)|
-                                                                                                                   +------------------------+
+                                                                                                                   +------------------------+ '''
 
 
 
